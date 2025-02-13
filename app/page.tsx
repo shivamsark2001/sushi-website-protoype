@@ -2,6 +2,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from 'next/image';
 
 export default function HomePage() {
   const [beforeImage, setBeforeImage] = useState<string | null>(null);
@@ -40,11 +41,11 @@ export default function HomePage() {
       <div className="flex flex-col items-center space-y-6 p-4 font-urbanist">
         {/* Branding and Header */}
         <div className="flex items-center space-x-2">
-          {/* Sushi-inspired camera icon (replace path if needed) */}
-          <img
+          <Image
             src="/sushi-camera-icon.png"
             alt="Sushi Camera Logo"
-            className="w-6 h-6"
+            width={24}
+            height={24}
           />
           <span className="text-xl font-bold text-black">
             sushi<span className="text-[#ED8A6A]">.camera</span>
