@@ -8,7 +8,7 @@ export const config = {
   },
 };
 
-export async function POST(request: Request) {
+export async function POST(_request: Request) {
   try {
     // For demo purposes, we'll just simulate processing
     // and return a placeholder image URL
@@ -17,7 +17,7 @@ export async function POST(request: Request) {
     return NextResponse.json({
       enhancedImageUrl: "https://via.placeholder.com/256?text=Enhanced"
     });
-  } catch (error) {
+  } catch (_error) {
     return NextResponse.json(
       { error: "Failed to process image" },
       { status: 500 }
