@@ -1,4 +1,3 @@
-// pages/api/enhance.js
 import { NextResponse } from 'next/server';
 
 // Disable Next.js's default body parser so we can parse multipart data
@@ -8,18 +7,17 @@ export const config = {
   },
 };
 
-export async function POST(_request: Request) {
+export async function POST(request: Request) {
   try {
-    // For demo purposes, we'll just simulate processing
-    // and return a placeholder image URL
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    // For demo purposes, simulate processing with a 2-second delay
+    await new Promise((resolve) => setTimeout(resolve, 2000));
 
     return NextResponse.json({
-      enhancedImageUrl: "https://via.placeholder.com/256?text=Enhanced"
+      enhancedImageUrl: 'https://via.placeholder.com/256?text=Enhanced',
     });
-  } catch (_error) {
+  } catch {
     return NextResponse.json(
-      { error: "Failed to process image" },
+      { error: 'Failed to process image' },
       { status: 500 }
     );
   }
