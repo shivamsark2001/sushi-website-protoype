@@ -9,6 +9,16 @@ export const config = {
 
 export async function POST(request: Request) {
   try {
+    const formData = await request.formData();
+    const image = formData.get('image');
+    
+    if (!image) {
+      return NextResponse.json(
+        { error: 'No image provided' },
+        { status: 400 }
+      );
+    }
+
     // For demo purposes, simulate processing with a 2-second delay
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
